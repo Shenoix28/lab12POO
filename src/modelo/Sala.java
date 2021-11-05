@@ -8,7 +8,7 @@ package modelo;
 public class Sala {
   private String identificador;
   private String ubicacion;
-  private int capacidad;
+  private String capacidad;
   
   /**
    * Método constructor de la clase
@@ -16,7 +16,7 @@ public class Sala {
    * @param pUbicacion que es la ubicacion de la sala
    * @param pCapacidad que es la capacidad de la sala
    */
-  public Sala(String pIdentificador, String pUbicacion, int pCapacidad) {
+  public Sala(String pIdentificador, String pUbicacion, String pCapacidad) {
   identificador=pIdentificador;
   ubicacion=pUbicacion;
   capacidad=pCapacidad;
@@ -58,7 +58,7 @@ public class Sala {
    * Método para indicar el valor de la capacidad de la sala
    * @param pCapacidad que es la capacidad de la sala
    */
-  public void setCapacidad(int pCapacidad) {
+  public void setCapacidad(String pCapacidad) {
   capacidad=pCapacidad;
   }
   
@@ -66,7 +66,7 @@ public class Sala {
    * Método para obtener el valor de la capacidad de la sala
    * @return la capacidad de la sala
    */
-  public int getCapacidad() {
+  public String getCapacidad() {
   return capacidad;
   }
 }

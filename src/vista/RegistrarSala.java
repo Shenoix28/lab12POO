@@ -18,7 +18,7 @@ public class RegistrarSala extends JFrame {
   public JTextField txtIdentificador;
   public JTextField txtUbicacion;
   public JTextField txtCapacidad;
-
+  public JButton btnCrearSala;
   /**
    * Launch the application.
    */
@@ -83,9 +83,10 @@ public class RegistrarSala extends JFrame {
     contentPane.add(txtCapacidad);
     txtCapacidad.setColumns(10);
     
-    JButton btnCrearSala = new JButton("Crear Sala");
+    btnCrearSala = new JButton("Crear Sala");
     btnCrearSala.setFont(new Font("SansSerif", Font.PLAIN, 15));
     btnCrearSala.setBounds(158, 206, 120, 23);
     contentPane.add(btnCrearSala);
   }
+  
 }
