@@ -22,21 +22,6 @@ public class LoginForm extends JFrame {
 	public JButton btnCancelarLogin;
 	public JButton btnIniciarLogin;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LoginForm frame = new LoginForm();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -75,20 +60,12 @@ public class LoginForm extends JFrame {
 		contentPane.add(txtContraseña);
 		txtContraseña.setColumns(10);
 		
-		JButton btnCancelarLogin = new JButton("Cancelar LogIn");
-		btnCancelarLogin.addActionListener(new ActionListener() {
-		  public void actionPerformed(ActionEvent e) {
-		  }
-		});
+		btnCancelarLogin = new JButton("Cancelar logIn");
 		btnCancelarLogin.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		btnCancelarLogin.setBounds(61, 206, 140, 23);
 		contentPane.add(btnCancelarLogin);
 		
-		JButton btnIniciarLogin = new JButton("Iniciar LogIn");
-		btnIniciarLogin.addActionListener(new ActionListener() {
-		  public void actionPerformed(ActionEvent e) {
-		  }
-		});
+		btnIniciarLogin = new JButton("Iniciar logIn");
 		btnIniciarLogin.setFont(new Font("SansSerif", Font.PLAIN, 15));
 		btnIniciarLogin.setBounds(226, 206, 140, 23);
 		contentPane.add(btnIniciarLogin);	
@@ -100,6 +77,7 @@ public class LoginForm extends JFrame {
 	  ventanaAnterior.setVisible(true);
 	}
 	public void cancelarInicioSecion() {
+		System.out.println("SALIENDO....");
 	  System.exit(0);
 	}
 }

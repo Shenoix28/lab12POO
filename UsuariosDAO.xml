@@ -1,0 +1,17 @@
+<?xml version = "1.0"?>
+<class>
+   <UsuarioDAO id = "555">
+      <nombreUsuario>manuel</nombreUsuario>
+      <contrasenna>loaiza</contrasenna>
+   </UsuarioDAO>
+
+   <UsuarioDAO id = "222">
+      <nombreUsuario>josseline</nombreUsuario>
+      <contrasenna>mata</contrasenna>
+   </UsuarioDAO>
+   
+   <UsuarioDAO id = "999">
+      <nombreUsuario>nazareth</nombreUsuario>
+      <contrasenna>briseño</contrasenna>
+   </UsuarioDAO>
+</class>
