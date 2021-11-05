@@ -5,20 +5,20 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import dao.UsuarioDAO;// cambiar
-import dao.UsuarioDAOXML; //cambiar
+import dao.SalaDAO;
+import dao.SalaDAOXML; 
 import modelo.Sala;
 import vista.RegistrarSala;
 
 public class ControladorSala implements ActionListener {
   public RegistrarSala vista;
-  public UsuarioDAO daoUsuario;
+  public SalaDAO daoSala;
   public Sala sala;
   
   public ControladorSala(RegistrarSala pVista, Sala pSala) {
     vista = pVista;
     sala = pSala;
-    UsuarioDAO daoSala = new UsuarioDAOXML();
+    SalaDAO daoSala = new SalaDAOXML();
 
     this.vista.btnCrearSala.addActionListener(this);
   }

@@ -88,5 +88,8 @@ public class RegistrarSala extends JFrame {
     btnCrearSala.setBounds(158, 206, 120, 23);
     contentPane.add(btnCrearSala);
   }
+  public boolean registroDatosCorrectos() {
+    return true;
+  }
   
 }
