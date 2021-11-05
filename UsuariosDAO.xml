@@ -1,17 +1,15 @@
-<?xml version = "1.0"?>
-<class>
-   <UsuarioDAO id = "555">
-      <nombreUsuario>manuel</nombreUsuario>
-      <contrasenna>loaiza</contrasenna>
-   </UsuarioDAO>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<UsuarioDAO id="555">
+   <nombreUsuario>manuel</nombreUsuario>
+   <contrasenna>loaiza</contrasenna>
+</UsuarioDAO>
 
-   <UsuarioDAO id = "222">
-      <nombreUsuario>josseline</nombreUsuario>
-      <contrasenna>mata</contrasenna>
-   </UsuarioDAO>
-   
-   <UsuarioDAO id = "999">
-      <nombreUsuario>nazareth</nombreUsuario>
-      <contrasenna>briseño</contrasenna>
-   </UsuarioDAO>
-</class>
+<UsuarioDAO id="222">
+   <nombreUsuario>josseline</nombreUsuario>
+   <contrasenna>mata</contrasenna>
+</UsuarioDAO>
+
+<UsuarioDAO id="999">
+   <nombreUsuario>nazareth</nombreUsuario>
+   <contrasenna>briseño</contrasenna>
+</UsuarioDAO>
