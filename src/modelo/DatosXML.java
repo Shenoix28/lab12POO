@@ -41,5 +41,9 @@ public class DatosXML {
 		return datos;
 
 	}
+	
+	public static void writeElements(String fileName,String objectName, String atributo) {
+		
+	}
 
 }
