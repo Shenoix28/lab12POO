@@ -54,5 +54,9 @@ public class ControladorSala implements ActionListener {
       JOptionPane.showMessageDialog(vista, "Todos los datos son requeridos");
     }
   }
+  
+  public void nomames() {
+  	System.out.println("no mames");
+  }
 
 }
