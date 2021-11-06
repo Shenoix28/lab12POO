@@ -51,24 +51,32 @@ public class DatosXML {
 
 	}
 
-	public static void writeElements(String fileName, String objectName, String atributo) {
+	public static void writeElements(String fileName, String objectName, String[] atributos, String[] datos) {
 		File inputFile = new File(fileName + ".xml");
-		String[] datos;
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
+		if(atributos.length!=datos.length) {
+			System.out.println("Los atributos y los datos no coinciden");
+			return;
+		}
+		
 		try {
 			builder = factory.newDocumentBuilder();
 			doc = builder.parse(inputFile);
 			//agrega al objeto
-			Element objeto=doc.createElement(objectName);      
-			//agrega atributos
-			Node data=doc.createTextNode("nombreUsuario");
-			data.setNodeValue("numa");
-			objeto.appendChild(data);
+			Element objeto=doc.createElement(objectName); 
 			
+			for (int i=0; atributos.length>i;i++) {
+				Element attr=doc.createElement(atributos[i]);
+				attr.setTextContent(datos[i]);
+				objeto.appendChild(attr);
+			}
+
 			doc.getDocumentElement().appendChild(objeto);
 			
+			doc.getDocumentElement().normalize();
 
+			
 			DOMSource source = new DOMSource(doc);
 			StreamResult result = new StreamResult(new FileOutputStream(fileName + ".xml"));
 
@@ -77,10 +85,53 @@ public class DatosXML {
 
 			transformer.transform(source, result);
 			
-		} catch (ParserConfigurationException | SAXException | IOException | TransformerException e) {
+		} catch (ParserConfigurationException | SAXException | IOException | TransformerException  e) {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public static void modifyElement(String fileName, String objectName, String atributoID, String datoID, String atributoCambio , String datoNuevo) {
+		File inputFile = new File(fileName + ".xml");
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		
+		try {
+			builder = factory.newDocumentBuilder();
+			doc = builder.parse(inputFile);
+			NodeList coleccion=doc.getElementsByTagName(objectName); 
+			Node unidad=null;
+			for (int i=0;coleccion.getLength()>i;i++) {
+				unidad=coleccion.item(i);
+				
+				NodeList attrobj= unidad.getChildNodes();
+								
+				String dato=attrobj.item(0).getTextContent();
+
+				if(dato.equals(datoID)) {
+					for (int x=0;attrobj.getLength()>x;x++) {
+						if (attrobj.item(x).getNodeName().equals(atributoCambio)) {
+							attrobj.item(x).setTextContent(datoNuevo);
+							break;
+						}
+					}
+					
+				}
+			}
+			
+			doc.getDocumentElement().normalize();
+			
+			DOMSource source = new DOMSource(doc);
+			StreamResult result = new StreamResult(new FileOutputStream(fileName + ".xml"));
+
+			TransformerFactory transFactory = TransformerFactory.newInstance();
+			Transformer transformer = transFactory.newTransformer();
+
+			transformer.transform(source, result);
+			
+		} catch (ParserConfigurationException | SAXException | IOException | TransformerException  e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }

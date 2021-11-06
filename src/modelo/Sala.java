@@ -22,7 +22,10 @@ public class Sala {
   capacidad=pCapacidad;
   }
   
-  /**
+  public Sala() {
+	}
+
+	/**
    * Método para indicar el valor del identificador de la sala
    * @param pIdentificador que es el identificador de la sala
    */

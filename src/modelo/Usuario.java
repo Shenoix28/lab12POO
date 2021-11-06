@@ -19,7 +19,10 @@ public class Usuario {
   contrasenna=pContrasenna;
   }
   
-  /**
+  public Usuario() {
+	}
+
+	/**
    * Método para indicar el nombre del usuario
    * @param pNombre que es el nombre del usuario
    */

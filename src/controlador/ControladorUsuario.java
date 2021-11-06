@@ -17,7 +17,7 @@ public class ControladorUsuario implements ActionListener {
 	public ControladorUsuario(LoginForm pVista, Usuario pUsuario) {
 		vista = pVista;
 		usuario = pUsuario;
-		UsuarioDAO daoUsuario = new UsuarioDAOXML();
+		daoUsuario = new UsuarioDAOXML();
 
 		this.vista.btnIniciarLogin.addActionListener(this);
 		this.vista.btnCancelarLogin.addActionListener(this);

@@ -18,7 +18,7 @@ public class ControladorSala implements ActionListener {
   public ControladorSala(RegistrarSala pVista, Sala pSala) {
     vista = pVista;
     sala = pSala;
-    SalaDAO daoSala = new SalaDAOXML();
+    daoSala = new SalaDAOXML();
 
     this.vista.btnCrearSala.addActionListener(this);
   }

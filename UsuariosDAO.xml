@@ -1,15 +1,2 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<UsuarioDAO id="555">
-   <nombreUsuario>manuel</nombreUsuario>
-   <contrasenna>loaiza</contrasenna>
-</UsuarioDAO>
-
-<UsuarioDAO id="222">
-   <nombreUsuario>josseline</nombreUsuario>
-   <contrasenna>mata</contrasenna>
-</UsuarioDAO>
-
-<UsuarioDAO id="999">
-   <nombreUsuario>nazareth</nombreUsuario>
-   <contrasenna>briseño</contrasenna>
-</UsuarioDAO>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><class>
+<UsuarioDAO><nombreUsuario>Manuel</nombreUsuario><contrasenna>piyoloko</contrasenna></UsuarioDAO><UsuarioDAO><nombreUsuario>Daya</nombreUsuario><contrasenna>Mata</contrasenna></UsuarioDAO><UsuarioDAO><nombreUsuario>Popo</nombreUsuario><contrasenna>Feliz</contrasenna></UsuarioDAO></class>
