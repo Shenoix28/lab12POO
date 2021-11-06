@@ -10,11 +10,22 @@ import dao.SalaDAOXML;
 import modelo.Sala;
 import vista.RegistrarSala;
 
+/**
+ * Clase que implementa los metodos controladores del modulo de Sala. 
+ * Esta clase implementa la clase abstracta ActionListener
+ * @author Josseline, Nazaret, Manuel
+ *
+ */
 public class ControladorSala implements ActionListener {
   public RegistrarSala vista;
   public SalaDAO daoSala;
   public Sala sala;
   
+  /**
+   * Metodo constructor
+	 * @param pVista: La clase que posee la interfaz grafica.
+   * @param pSala: La sala que se encuentra ingresada
+   */
   public ControladorSala(RegistrarSala pVista, Sala pSala) {
     vista = pVista;
     sala = pSala;
@@ -33,6 +44,9 @@ public class ControladorSala implements ActionListener {
     }
   }
 
+  /**
+   * Metodo utilizado para registrar la sala apartir de los datos ingresados en la vista.
+   */
   public void registrarSala() {
     if (vista.registroDatosCorrectos() == true) {
       String identificador = vista.txtIdentificador.getText();

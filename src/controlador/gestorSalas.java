@@ -3,8 +3,20 @@ package controlador;
 import vista.*;
 import modelo.*;
 
+/**
+ * Clase main para ejecutar el programa.
+ * @author Josseline, Nazaret, Manuel
+ *
+ */
 public class gestorSalas {
 
+	/**
+	 * Metodo principal para ejecutar las 2 vistas creadas para el laboratorio:
+	 * 	-LoginForm
+	 * 	-RegistrarSala
+	 * 
+	 * @param args
+	 */
 	public static void main(String[]args) {
 	  LoginForm vistaLogin=new LoginForm();
 	  Usuario usuario=new Usuario();

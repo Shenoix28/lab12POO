@@ -9,11 +9,22 @@ import dao.UsuarioDAOXML;
 import modelo.*;
 import vista.*;
 
+/**
+ * Clase que implementa los metodos controladores del modulo de usuario. 
+ * Esta clase implementa la clase abstracta ActionListener
+ * @author Josseline, Nazaret, Manuel
+ *
+ */
 public class ControladorUsuario implements ActionListener {
 	public LoginForm vista;
 	public UsuarioDAO daoUsuario;
 	public Usuario usuario;
 
+	/**
+	 * Metodo constructor
+	 * @param pVista: La clase que posee la interfaz grafica.
+	 * @param pUsuario: El usuario ingresado
+	 */
 	public ControladorUsuario(LoginForm pVista, Usuario pUsuario) {
 		vista = pVista;
 		usuario = pUsuario;
@@ -36,6 +47,9 @@ public class ControladorUsuario implements ActionListener {
 		}
 	}
 
+	/**
+	 * Metodo utilizado para verificar la información del usuario y permitir o rechazar el ingreso en la aplicación
+	 */
 	public void logIn() {
 		if (vista.logInDatosCorrectos() == true) {
 			String nombreUsuario = vista.txtNombreUsuario.getText();
@@ -56,6 +70,9 @@ public class ControladorUsuario implements ActionListener {
 		}
 	}
 
+	/**
+	 * Metodo utilizado para cerrar la aplicación
+	 */
 	public void cerrarVentanaLogin() {
 		vista.cancelarInicioSecion();
 	}

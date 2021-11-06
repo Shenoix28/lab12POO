@@ -21,11 +21,23 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ * Clase utilizada para gestionar la información de los archivos XML.
+ * @author Josseline, Nazaret, Manuel
+ *
+ */
 public class DatosXML {
 
 	private static Document doc;
 	private static DocumentBuilder builder;
 
+	/**
+	 * Metodo utilizado para obtener los elementos de un archivo XML
+	 * @param fileName: Nombre del archivo XML
+	 * @param objectName: Nombre de los objetos dentro del archivo
+	 * @param atributo: nombre de los atributos que se quieren extraer.
+	 * @return
+	 */
 	public static String[] getElements(String fileName, String objectName, String atributo) {
 		File inputFile = new File(fileName + ".xml");
 		String[] datos;
@@ -51,6 +63,13 @@ public class DatosXML {
 
 	}
 
+	/**
+	 * Metodo utilizado para escribir nuevos elementos dentor de un archivo XML
+	 * @param fileName: Nombre del archivo XML
+	 * @param objectName: Nombre del objeto que se escribirá
+	 * @param atributos: Lista de atributos del objeto.
+	 * @param datos: Lista de los datos que sera asociados al los atributos.
+	 */
 	public static void writeElements(String fileName, String objectName, String[] atributos, String[] datos) {
 		File inputFile = new File(fileName + ".xml");
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -91,6 +110,15 @@ public class DatosXML {
 
 	}
 	
+	/**
+	 * Metodo utilizado para modificar los elementos dentro de un archivo XML
+	 * @param fileName: Nombre del archivo que se quiere modificar
+	 * @param objectName: Nombre del objeto dentro del archivo
+	 * @param atributoID: Nombre del atributo por el cual se buscará el elemento
+	 * @param datoID: Dato por el cual se buscara dentro de los atributos ID seleccionados
+	 * @param atributoCambio: Nombre del atributo que se cambiara.
+	 * @param datoNuevo: Dato que sustituira al dato del atributo seleccionado para el cambio.
+	 */
 	public static void modifyElement(String fileName, String objectName, String atributoID, String datoID, String atributoCambio , String datoNuevo) {
 		File inputFile = new File(fileName + ".xml");
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
