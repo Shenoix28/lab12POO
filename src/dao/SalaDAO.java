@@ -3,7 +3,11 @@ package dao;
 import java.util.ArrayList;
 
 import modelo.Sala;
-
+/**
+ * Interface de SalaDao
+ * @author nazaret, josseline, manuel
+ *
+ */
 public interface SalaDAO {
   public abstract Sala registrarSala(Sala sala);
 

@@ -4,9 +4,17 @@ import java.util.ArrayList;
 
 import modelo.DatosXML;
 import modelo.Usuario;
-
+/**
+ * Clase UsuarioDAOXML que implementa la clase abstracta UsuarioDAO 
+ * @author nazaret, manuel, josseline
+ *
+ */
 public class UsuarioDAOXML implements UsuarioDAO{
-
+	/**
+	 * Metodo que inicia sesion
+	 * @param usuario: objeto de tipo Usuario
+	 * @return usuario que inicio sesion
+	 */
 	public Usuario iniciarSesion(Usuario usuario) {
 		String[] usuarios=DatosXML.getElements("UsuariosDAO", "UsuarioDAO", "nombreUsuario");
 		String[] contrasennas=DatosXML.getElements("UsuariosDAO", "UsuarioDAO", "contrasenna");
@@ -21,7 +29,10 @@ public class UsuarioDAOXML implements UsuarioDAO{
 		
 		return null;
 	}
-
+    /**
+     * Metodo que muestra una lista de los usuarios
+     * @return arrUsuarios: Array con los usuario registrados
+     */
 	public ArrayList<Usuario> cargarListaUsuario() {
 		
 		String[] usuarios=DatosXML.getElements("UsuariosDAO", "UsuarioDAO", "nombreUsuario");
@@ -35,7 +46,11 @@ public class UsuarioDAOXML implements UsuarioDAO{
 		
 		return arrUsuarios;
 	}
-
+	/**
+	 * Metodo que cambia la contraseña de un usuario
+	 * @param nombreUsuario: nombre del usuario, contrasenna: contrasenna actual, contrasennaNueva: nueva contrasenna 
+	 * @return boolean
+	 */
 	public boolean cambiarContraseña(String nombreUsuario, String contrasenna, String contrasennaNueva) {
 		
 		if (iniciarSesion(new Usuario(nombreUsuario,contrasenna))==null) {
@@ -46,7 +61,11 @@ public class UsuarioDAOXML implements UsuarioDAO{
 
 		return true;
 	}
-
+	/**
+	 * Metodo que registra a un usuario
+	 * @param Usuario: objeto de tipo usuario
+	 * @return boolean
+	 */
 	public boolean registrarUsuario(Usuario usuario) {
 		String[] attr= {"nombreUsuario","contrasenna"};
 		String[] datos= {usuario.getNombre(),usuario.getContrasenna()};
